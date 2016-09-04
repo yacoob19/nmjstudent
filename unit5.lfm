@@ -1,0 +1,524 @@
+object frmview: Tfrmview
+  Left = 299
+  Height = 591
+  Top = 17
+  Width = 982
+  Caption = 'View Student'
+  ClientHeight = 0
+  ClientWidth = 0
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  LCLVersion = '1.2.4.0'
+  WindowState = wsMaximized
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 664
+    Top = 8
+    Width = 1344
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 1048
+    Height = 33
+    Top = 680
+    Width = 112
+    Caption = 'Refresh'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 1208
+    Height = 34
+    Top = 680
+    Width = 120
+    Caption = 'View Student Report'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 520
+    top = 688
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'STU_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'STU_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'STU_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'STU_MIDDLENAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'STU_GENDER'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'STU_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'FAMILY_DOC_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'FAMILY_DOC_NUM'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'STU_DOB'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'STU_HOME_LANG'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'STU_GRADE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'MEDICALAID_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'MEDICALAID_SCHEME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'MEDICALAID_NUMBER'
+        DataType = ftString
+        Precision = -1
+        Size = 25
+      end    
+      item
+        Name = 'MEDICALAID_MAINMEMBERNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'F_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'F_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'F_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_MARITIALSTATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'F_OCCUPATION'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'F_COMPANYEMPLOYED'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'F_ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'F_SUBURB'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'F_POBOX'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'F_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'F_HOMENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_WORKNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_MOBILENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'M_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'M_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'M_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_MARITIALSTATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'M_OCCUPATION'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'M_COMPANYEMPLOYED'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'M_ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'M_SUBURB'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'M_POBOX'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'M_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'M_HOMENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_WORKNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_MOBILENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'G_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'G_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'G_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_MARITIALSTATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'G_OCCUPATION'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'G_COMPANYEMPLOYED'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'G_ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'G_SUBURB'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'G_POBOX'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'G_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'G_HOMENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_WORKNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_MOBILENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'ER_CONTACTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'ER_CONTACTNO'
+        DataType = ftString
+        Precision = -1
+        Size = 16
+      end    
+      item
+        Name = 'DISEASE_INFO'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'PHYSICAL_DISABILITY_INFO'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'ALLERGIES'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'MEDICATION'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'SIBLING1_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING1_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING1_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'SIBLING2_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING2_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING2_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'SIBLING3_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING3_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING3_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'SIBLING4_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING4_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING4_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end>
+    Active = True
+    Database = NMJMainForm.IBConnection1
+    Transaction = NMJMainForm.SQLTransaction1
+    SQL.Strings = (
+      'select * from student ;'
+    )
+    Params = <>
+    left = 584
+    top = 680
+  end
+  object frReport1: TfrReport
+    Dataset = frDBDataSet1
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    left = 648
+    top = 680
+  end
+  object frDBDataSet1: TfrDBDataSet
+    DataSet = SQLQuery1
+    left = 728
+    top = 680
+  end
+end

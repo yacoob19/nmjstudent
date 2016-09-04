@@ -1,0 +1,1634 @@
+object frmsearch: Tfrmsearch
+  Left = 467
+  Height = 729
+  Top = 332
+  Width = 1362
+  Caption = 'Search Student'
+  ClientHeight = 729
+  ClientWidth = 1362
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  LCLVersion = '1.2.4.0'
+  WindowState = wsMaximized
+  object Edit1: TEdit
+    Left = 144
+    Height = 23
+    Top = 23
+    Width = 240
+    CharCase = ecUppercase
+    OnEditingDone = Edit1EditingDone
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 23
+    Width = 104
+    Caption = 'Search by Surname:'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 424
+    Height = 26
+    Top = 23
+    Width = 120
+    Caption = '&Search'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object DBNavigator2: TDBNavigator
+    Left = 80
+    Height = 25
+    Top = 88
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource1
+    Enabled = False
+    Options = []
+    TabOrder = 2
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+  end
+  object Button3: TButton
+    Left = 424
+    Height = 27
+    Top = 66
+    Width = 120
+    Caption = 'View as Report'
+    OnClick = Button3Click
+    TabOrder = 3
+  end
+  object GroupBox1: TGroupBox
+    Left = 16
+    Height = 296
+    Top = 136
+    Width = 656
+    Caption = 'Student Information'
+    ClientHeight = 278
+    ClientWidth = 652
+    TabOrder = 4
+    object lblCode: TLabel
+      Left = 8
+      Height = 15
+      Top = 16
+      Width = 72
+      Caption = 'Student Code'
+      ParentColor = False
+    end
+    object lblsurname: TLabel
+      Left = 10
+      Height = 15
+      Top = 48
+      Width = 47
+      Caption = 'Surname'
+      ParentColor = False
+    end
+    object lblfname: TLabel
+      Left = 10
+      Height = 15
+      Top = 80
+      Width = 57
+      Caption = 'First Name'
+      ParentColor = False
+    end
+    object lblmiddlename: TLabel
+      Left = 10
+      Height = 15
+      Top = 112
+      Width = 72
+      Caption = 'Middle Name'
+      ParentColor = False
+    end
+    object lblGender: TLabel
+      Left = 8
+      Height = 15
+      Top = 144
+      Width = 38
+      Caption = 'Gender'
+      ParentColor = False
+    end
+    object lblidno: TLabel
+      Left = 10
+      Height = 15
+      Top = 216
+      Width = 56
+      Caption = 'ID number'
+      ParentColor = False
+    end
+    object lblfamdocname: TLabel
+      Left = 320
+      Height = 15
+      Top = 16
+      Width = 109
+      Caption = 'Family Doctor Name'
+      ParentColor = False
+    end
+    object lblfamilydocno: TLabel
+      Left = 320
+      Height = 15
+      Top = 48
+      Width = 124
+      Caption = 'Family Doctor Number '
+      ParentColor = False
+    end
+    object lblDOB: TLabel
+      Left = 8
+      Height = 30
+      Top = 168
+      Width = 84
+      Caption = 'DOB '#13#10'(MM/DD/YYYY)'
+      ParentColor = False
+    end
+    object lblhomelang: TLabel
+      Left = 320
+      Height = 15
+      Top = 80
+      Width = 132
+      Caption = 'Student Home Language'
+      ParentColor = False
+    end
+    object lblcurrentgrade: TLabel
+      Left = 320
+      Height = 15
+      Top = 112
+      Width = 74
+      Caption = 'Current Grade'
+      ParentColor = False
+    end
+    object lblmedicalaidname: TLabel
+      Left = 320
+      Height = 15
+      Top = 144
+      Width = 98
+      Caption = 'Medical Aid Name'
+      ParentColor = False
+    end
+    object lblmedicalaidscheme: TLabel
+      Left = 320
+      Height = 15
+      Top = 176
+      Width = 108
+      Caption = 'Medical Aid Scheme'
+      ParentColor = False
+    end
+    object lblmedicalaidnum: TLabel
+      Left = 320
+      Height = 15
+      Top = 208
+      Width = 110
+      Caption = 'Medical Aid Number'
+      ParentColor = False
+    end
+    object lblmainmemname: TLabel
+      Left = 320
+      Height = 15
+      Top = 240
+      Width = 110
+      Caption = 'Main Member Name'
+      ParentColor = False
+    end
+    object DBEdit1: TDBEdit
+      Left = 96
+      Height = 23
+      Top = 8
+      Width = 184
+      DataField = 'STU_CODE'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 96
+      Height = 23
+      Top = 40
+      Width = 184
+      DataField = 'STU_SURNAME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 35
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 96
+      Height = 23
+      Top = 72
+      Width = 184
+      DataField = 'STU_FIRSTNAME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 35
+      TabOrder = 2
+    end
+    object DBEdit4: TDBEdit
+      Left = 96
+      Height = 23
+      Top = 104
+      Width = 184
+      DataField = 'STU_MIDDLENAME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 35
+      TabOrder = 3
+    end
+    object DBEdit5: TDBEdit
+      Left = 96
+      Height = 23
+      Top = 136
+      Width = 88
+      DataField = 'STU_GENDER'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 1
+      TabOrder = 4
+    end
+    object DBEdit6: TDBEdit
+      Left = 96
+      Height = 23
+      Top = 175
+      Width = 120
+      DataField = 'STU_DOB'
+      DataSource = DataSource1
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object DBEdit7: TDBEdit
+      Left = 94
+      Height = 23
+      Top = 208
+      Width = 184
+      DataField = 'STU_IDNO'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 20
+      TabOrder = 6
+    end
+    object DBEdit8: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 8
+      Width = 176
+      DataField = 'FAMILY_DOC_NAME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 35
+      TabOrder = 7
+    end
+    object DBEdit9: TDBEdit
+      Left = -160
+      Height = 23
+      Top = 336
+      Width = 176
+      DataField = 'FAMILY_DOC_NUM'
+      DataSource = DataSource1
+      CharCase = ecNormal
+      MaxLength = 10
+      TabOrder = 8
+    end
+    object DBEdit10: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 72
+      Width = 176
+      DataField = 'STU_HOME_LANG'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 50
+      TabOrder = 9
+    end
+    object DBEdit11: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 104
+      Width = 80
+      DataField = 'STU_GRADE'
+      DataSource = DataSource1
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 10
+    end
+    object DBEdit12: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 136
+      Width = 176
+      DataField = 'MEDICALAID_NAME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 50
+      TabOrder = 11
+    end
+    object DBEdit13: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 168
+      Width = 176
+      DataField = 'MEDICALAID_SCHEME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 50
+      TabOrder = 12
+    end
+    object DBEdit14: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 200
+      Width = 176
+      DataField = 'MEDICALAID_NUMBER'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 25
+      TabOrder = 13
+    end
+    object DBEdit15: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 232
+      Width = 176
+      DataField = 'MEDICALAID_MAINMEMBERNAME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 50
+      TabOrder = 14
+    end
+    object DBEdit16: TDBEdit
+      Left = 464
+      Height = 23
+      Top = 40
+      Width = 176
+      DataField = 'FAMILY_DOC_NUM'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 10
+      TabOrder = 15
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 16
+      Height = 25
+      Top = 648
+      Width = 241
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 241
+      Options = []
+      TabOrder = 16
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 680
+    Height = 520
+    Top = 184
+    Width = 674
+    Caption = 'Parent/Guardians'
+    ClientHeight = 502
+    ClientWidth = 670
+    TabOrder = 5
+    object Label2: TLabel
+      Left = 79
+      Height = 15
+      Top = 56
+      Width = 32
+      Caption = 'Name'
+      ParentColor = False
+    end
+    object Label15: TLabel
+      Left = 72
+      Height = 15
+      Top = 88
+      Width = 39
+      Caption = 'ID num'
+      ParentColor = False
+    end
+    object Label16: TLabel
+      Left = 36
+      Height = 15
+      Top = 120
+      Width = 75
+      Caption = 'Maritial Status'
+      ParentColor = False
+    end
+    object Label17: TLabel
+      Left = 49
+      Height = 15
+      Top = 152
+      Width = 62
+      Caption = 'Occupation'
+      ParentColor = False
+    end
+    object Label18: TLabel
+      Left = 3
+      Height = 15
+      Top = 184
+      Width = 108
+      Caption = 'Company Employed'
+      ParentColor = False
+    end
+    object Label19: TLabel
+      Left = 69
+      Height = 15
+      Top = 224
+      Width = 42
+      Caption = 'Address'
+      ParentColor = False
+    end
+    object Label20: TLabel
+      Left = 73
+      Height = 15
+      Top = 264
+      Width = 38
+      Caption = 'Suburb'
+      ParentColor = False
+    end
+    object Label21: TLabel
+      Left = 75
+      Height = 15
+      Top = 296
+      Width = 36
+      Caption = 'Po Box'
+      ParentColor = False
+    end
+    object Label22: TLabel
+      Left = 83
+      Height = 15
+      Top = 336
+      Width = 28
+      Caption = 'Code'
+      ParentColor = False
+    end
+    object Label23: TLabel
+      Left = 59
+      Height = 15
+      Top = 368
+      Width = 52
+      Caption = 'Home No'
+      ParentColor = False
+    end
+    object Label24: TLabel
+      Left = 64
+      Height = 15
+      Top = 400
+      Width = 47
+      Caption = 'Work No'
+      ParentColor = False
+    end
+    object Label25: TLabel
+      Left = 59
+      Height = 15
+      Top = 432
+      Width = 54
+      Caption = 'Mobile no'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 79
+      Height = 15
+      Top = 464
+      Width = 32
+      Caption = 'Email '
+      ParentColor = False
+    end
+    object lblfsurname1: TLabel
+      Left = 64
+      Height = 15
+      Top = 24
+      Width = 47
+      Caption = 'Sruname'
+      ParentColor = False
+    end
+    object GroupBox3: TGroupBox
+      Left = 144
+      Height = 487
+      Top = 0
+      Width = 169
+      Caption = 'Father'
+      ClientHeight = 469
+      ClientWidth = 165
+      TabOrder = 0
+      object DBEdit17: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 0
+        Width = 144
+        DataField = 'F_SURNAME'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 35
+        TabOrder = 0
+      end
+      object DBEdit18: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 64
+        Width = 144
+        DataField = 'F_IDNO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 1
+      end
+      object DBEdit19: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 200
+        Width = 150
+        DataField = 'F_ADDRESS'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 100
+        TabOrder = 2
+      end
+      object DBEdit20: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 128
+        Width = 136
+        DataField = 'F_OCCUPATION'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 3
+      end
+      object DBEdit21: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 96
+        Width = 136
+        DataField = 'F_MARITIALSTATUS'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 12
+        TabOrder = 4
+      end
+      object DBEdit22: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 160
+        Width = 134
+        DataField = 'F_COMPANYEMPLOYED'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 5
+      end
+      object DBEdit23: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 240
+        Width = 136
+        DataField = 'F_SUBURB'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 30
+        TabOrder = 6
+      end
+      object DBEdit24: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 272
+        Width = 80
+        DataField = 'F_POBOX'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 7
+        TabOrder = 7
+      end
+      object DBEdit25: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 312
+        Width = 80
+        DataField = 'F_CODE'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 0
+        TabOrder = 8
+      end
+      object DBEdit26: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 344
+        Width = 144
+        DataField = 'F_HOMENO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 9
+      end
+      object DBEdit27: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 376
+        Width = 144
+        DataField = 'F_WORKNO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 10
+      end
+      object DBEdit28: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 408
+        Width = 144
+        DataField = 'F_MOBILENO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 11
+      end
+      object DBEdit29: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 32
+        Width = 144
+        DataField = 'F_FIRSTNAME'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 35
+        TabOrder = 12
+      end
+      object DBEdit30: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 440
+        Width = 144
+        DataField = 'F_EMAIL'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 13
+      end
+    end
+    object Mother: TGroupBox
+      Left = 320
+      Height = 487
+      Top = 1
+      Width = 169
+      Caption = 'Mother'
+      ClientHeight = 469
+      ClientWidth = 165
+      TabOrder = 1
+      object DBEdit31: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 0
+        Width = 144
+        DataField = 'M_SURNAME'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 35
+        TabOrder = 0
+      end
+      object DBEdit32: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 64
+        Width = 144
+        DataField = 'M_IDNO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 1
+      end
+      object DBEdit33: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 200
+        Width = 150
+        DataField = 'M_ADDRESS'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 100
+        TabOrder = 2
+      end
+      object DBEdit34: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 128
+        Width = 136
+        DataField = 'M_OCCUPATION'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 3
+      end
+      object DBEdit35: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 96
+        Width = 136
+        DataField = 'M_MARITIALSTATUS'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 12
+        TabOrder = 4
+      end
+      object DBEdit36: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 160
+        Width = 134
+        DataField = 'M_COMPANYEMPLOYED'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 5
+      end
+      object DBEdit37: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 240
+        Width = 136
+        DataField = 'M_SUBURB'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 30
+        TabOrder = 6
+      end
+      object DBEdit38: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 272
+        Width = 80
+        DataField = 'M_POBOX'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 7
+        TabOrder = 7
+      end
+      object DBEdit39: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 312
+        Width = 80
+        DataField = 'M_CODE'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 0
+        TabOrder = 8
+      end
+      object DBEdit40: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 344
+        Width = 144
+        DataField = 'M_HOMENO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 9
+      end
+      object DBEdit41: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 376
+        Width = 144
+        DataField = 'M_WORKNO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 10
+      end
+      object DBEdit42: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 408
+        Width = 144
+        DataField = 'M_MOBILENO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 11
+      end
+      object DBEdit43: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 32
+        Width = 144
+        DataField = 'M_FIRSTNAME'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 35
+        TabOrder = 12
+      end
+      object DBEdit44: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 440
+        Width = 144
+        DataField = 'M_EMAIL'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 13
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 488
+      Height = 487
+      Top = 1
+      Width = 169
+      Caption = 'Guardian'
+      ClientHeight = 469
+      ClientWidth = 165
+      TabOrder = 2
+      object DBEdit45: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 0
+        Width = 144
+        DataField = 'G_SURNAME'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 35
+        TabOrder = 0
+      end
+      object DBEdit46: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 64
+        Width = 144
+        DataField = 'G_IDNO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 1
+      end
+      object DBEdit47: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 200
+        Width = 150
+        DataField = 'G_ADDRESS'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 100
+        TabOrder = 2
+      end
+      object DBEdit48: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 128
+        Width = 136
+        DataField = 'G_OCCUPATION'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 3
+      end
+      object DBEdit49: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 96
+        Width = 136
+        DataField = 'G_MARITIALSTATUS'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 12
+        TabOrder = 4
+      end
+      object DBEdit50: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 160
+        Width = 134
+        DataField = 'G_COMPANYEMPLOYED'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 5
+      end
+      object DBEdit51: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 240
+        Width = 136
+        DataField = 'G_SUBURB'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 30
+        TabOrder = 6
+      end
+      object DBEdit52: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 272
+        Width = 80
+        DataField = 'G_POBOX'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 7
+        TabOrder = 7
+      end
+      object DBEdit53: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 311
+        Width = 80
+        DataField = 'G_CODE'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 0
+        TabOrder = 8
+      end
+      object DBEdit54: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 344
+        Width = 144
+        DataField = 'G_HOMENO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 9
+      end
+      object DBEdit55: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 376
+        Width = 144
+        DataField = 'G_WORKNO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 10
+      end
+      object DBEdit56: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 408
+        Width = 144
+        DataField = 'G_MOBILENO'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 20
+        TabOrder = 11
+      end
+      object DBEdit57: TDBEdit
+        Left = 10
+        Height = 23
+        Top = 32
+        Width = 144
+        DataField = 'G_FIRSTNAME'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 35
+        TabOrder = 12
+      end
+      object DBEdit58: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 440
+        Width = 144
+        DataField = 'G_EMAIL'
+        DataSource = DataSource1
+        CharCase = ecUppercase
+        MaxLength = 50
+        TabOrder = 13
+      end
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 792
+    Height = 89
+    Top = 72
+    Width = 401
+    Caption = 'Emergency No'
+    ClientHeight = 71
+    ClientWidth = 397
+    TabOrder = 6
+    object Label5: TLabel
+      Left = 10
+      Height = 15
+      Top = 10
+      Width = 32
+      Caption = 'Name'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 10
+      Height = 15
+      Top = 40
+      Width = 63
+      Caption = 'Tel Number'
+      ParentColor = False
+    end
+    object DBEdit59: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 2
+      Width = 256
+      DataField = 'ER_CONTACTNAME'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 35
+      TabOrder = 0
+    end
+    object DBEdit60: TDBEdit
+      Left = 104
+      Height = 23
+      Top = 32
+      Width = 256
+      DataField = 'ER_CONTACTNO'
+      DataSource = DataSource1
+      CharCase = ecNormal
+      MaxLength = 16
+      TabOrder = 1
+    end
+  end
+  object GroupBox5: TGroupBox
+    Left = 8
+    Height = 249
+    Top = 455
+    Width = 552
+    Caption = 'Medical Details'
+    ClientHeight = 231
+    ClientWidth = 548
+    TabOrder = 7
+    object Label7: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 223
+      Caption = 'Does the learner suffer from any diseases ?'
+      ParentColor = False
+    end
+    object Label8: TLabel
+      Left = 8
+      Height = 15
+      Top = 64
+      Width = 270
+      Caption = 'Does the learner suffer from any physical disability?'
+      ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 10
+      Height = 15
+      Top = 120
+      Width = 45
+      Caption = 'Allergies'
+      ParentColor = False
+    end
+    object Label10: TLabel
+      Left = 8
+      Height = 15
+      Top = 176
+      Width = 60
+      Caption = 'Medication'
+      ParentColor = False
+    end
+    object DBEdit61: TDBEdit
+      Left = 10
+      Height = 23
+      Top = 32
+      Width = 518
+      DataField = 'DISEASE_INFO'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 150
+      TabOrder = 0
+    end
+    object DBEdit62: TDBEdit
+      Left = 10
+      Height = 23
+      Top = 88
+      Width = 520
+      DataField = 'PHYSICAL_DISABILITY_INFO'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 150
+      TabOrder = 1
+    end
+    object DBEdit63: TDBEdit
+      Left = 10
+      Height = 23
+      Top = 144
+      Width = 518
+      DataField = 'ALLERGIES'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 150
+      TabOrder = 2
+    end
+    object DBEdit64: TDBEdit
+      Left = 10
+      Height = 23
+      Top = 200
+      Width = 518
+      DataField = 'MEDICATION'
+      DataSource = DataSource1
+      CharCase = ecUppercase
+      MaxLength = 150
+      TabOrder = 3
+    end
+  end
+  object Button4: TButton
+    Left = 696
+    Height = 25
+    Top = 23
+    Width = 104
+    Caption = 'Save Changes'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object frReport1: TfrReport
+    Dataset = frDBDataSet1
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    left = 1312
+    top = 24
+  end
+  object frDBDataSet1: TfrDBDataSet
+    left = 1160
+    top = 24
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'STU_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'STU_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'STU_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'STU_MIDDLENAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'STU_GENDER'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'STU_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'FAMILY_DOC_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'FAMILY_DOC_NUM'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'STU_DOB'
+        DataType = ftDate
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'STU_HOME_LANG'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'STU_GRADE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'MEDICALAID_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'MEDICALAID_SCHEME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'MEDICALAID_NUMBER'
+        DataType = ftString
+        Precision = -1
+        Size = 25
+      end    
+      item
+        Name = 'MEDICALAID_MAINMEMBERNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'F_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'F_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'F_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_MARITIALSTATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'F_OCCUPATION'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'F_COMPANYEMPLOYED'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'F_ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'F_SUBURB'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'F_POBOX'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'F_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'F_HOMENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_WORKNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_MOBILENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'F_EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'M_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'M_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'M_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_MARITIALSTATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'M_OCCUPATION'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'M_COMPANYEMPLOYED'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'M_ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'M_SUBURB'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'M_POBOX'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'M_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'M_HOMENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_WORKNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_MOBILENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'M_EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'G_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'G_FIRSTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'G_IDNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_MARITIALSTATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'G_OCCUPATION'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'G_COMPANYEMPLOYED'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'G_ADDRESS'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'G_SUBURB'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'G_POBOX'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'G_CODE'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'G_HOMENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_WORKNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_MOBILENO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'G_EMAIL'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'ER_CONTACTNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'ER_CONTACTNO'
+        DataType = ftString
+        Precision = -1
+        Size = 16
+      end    
+      item
+        Name = 'DISEASE_INFO'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'PHYSICAL_DISABILITY_INFO'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'ALLERGIES'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'MEDICATION'
+        DataType = ftString
+        Precision = -1
+        Size = 150
+      end    
+      item
+        Name = 'SIBLING1_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING1_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING1_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'SIBLING2_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING2_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING2_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'SIBLING3_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING3_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING3_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'SIBLING4_NAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING4_SURNAME'
+        DataType = ftString
+        Precision = -1
+        Size = 35
+      end    
+      item
+        Name = 'SIBLING4_GRADE'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end>
+    Active = True
+    Database = NMJMainForm.IBConnection1
+    Transaction = NMJMainForm.SQLTransaction1
+    SQL.Strings = (
+      'select * from student;'
+    )
+    Params = <>
+    left = 600
+    top = 24
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 1224
+    top = 32
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    left = 629
+    top = 24
+  end
+end

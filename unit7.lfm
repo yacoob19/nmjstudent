@@ -1,0 +1,47 @@
+object Form2: TForm2
+  Left = 232
+  Height = 408
+  Top = 103
+  Width = 449
+  Caption = 'About'
+  ClientHeight = 0
+  ClientWidth = 0
+  LCLVersion = '1.2.4.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 408
+    Top = 0
+    Width = 456
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -15
+    Font.Name = 'Franklin Gothic Book'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'NMJ '
+      ''
+      'Description:'
+      'Madressa Pro is an application created for the '
+      'Nelspruit Muslim Jamaats Madressa to allow'
+      'appropriate management of students and generate'
+      'required reports.'
+      ''
+      ''
+      'version:'
+      '1.0.1'
+      ''
+      'Developer:'
+      'Yacoob Mohammed '
+      ''
+      'Email:Yacoob_19@hotmail.com'
+      'Cell No:061-455-7736'
+      ''
+      ''
+      ''
+    )
+    OnChange = Memo1Change
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+  end
+end
